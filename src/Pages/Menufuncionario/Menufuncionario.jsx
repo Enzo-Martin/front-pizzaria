@@ -1,12 +1,12 @@
-const MenuFuncionario = () => {
- 
+const Menufuncionario = () => {
+
     return (
-        <div>
-             <nav className="navbar navbar-expand-lg navbar-light bg-light p-2 rounded shadow-sm w-100">
+            <div>
+ <nav className="navbar navbar-expand-lg navbar-light bg-light p-2 rounded shadow-sm w-100">
         <a className="navbar-brand" href="/pizzaria/funcionario/home">
           Home
         </a>
- 
+
         {/* Botão Hamburguer para telas menores */}
         <button
           className="navbar-toggler"
@@ -19,7 +19,7 @@ const MenuFuncionario = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
- 
+
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto">
             <li className="nav-item active">
@@ -37,7 +37,7 @@ const MenuFuncionario = () => {
                 Estoque
               </a>
             </li>
- 
+
             {/* Dropdown Menu */}
             <li className="nav-item dropdown">
               <a
@@ -70,20 +70,20 @@ const MenuFuncionario = () => {
                 </li>
               </ul>
             </li>
- 
+
             <li className="nav-item">
               <a className="nav-link disabled">Desativado</a>
             </li>
           </ul>
- 
+
           {/* Botão de Logout alinhado à direita */}
           <button type="button" className="btn btn-primary">
             Logout
           </button>
         </div>
       </nav>
-        </div>
+            </div>
     )
 }
- 
-export default MenuFuncionario
+
+export default Menufuncionario
