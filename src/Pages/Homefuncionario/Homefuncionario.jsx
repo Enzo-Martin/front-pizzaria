@@ -1,18 +1,18 @@
-import './App.css'
-import Homefuncionario from './pages/Homefncionario/HomeFuncionario'
+import MenuFuncionario from "../MenuFuncionario/MenuFuncionario"
  
  
-function App() {
-  return (
-    <>
-     
-      <div>    
-      <Homefuncionario/>
-      </div>
-   
-    </>
-  )
+const HomeFuncionario = () => {
+ 
+    return (
+        <div className="container">
+           
+        <MenuFuncionario/>
+ 
+        </div>
+    )
+ 
+ 
  
 }
  
-export default App
+export default HomeFuncionario
