@@ -1,0 +1,27 @@
+.menu {
+ 
+    background: grey;
+}
+ 
+.logo {
+    color: black !important;
+    font-weight: bold;
+    font-size: 1.4rem;
+    transition: .3s;
+}
+ 
+.logo:hover {
+    color: orange !important;
+    transform: translateY(-1px);
+}
+ 
+.itemMenu {
+    color: black !important;
+    transition: .3s;
+}
+ 
+.itemMenu:hover {
+    color: orange !important;
+    transform: translateY(-1px);
+ 
+}

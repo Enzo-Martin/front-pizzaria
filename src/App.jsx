@@ -1,6 +1,6 @@
 // import './App.css'
-import HomeFuncionario from './pages/HomeFuncionario/HomeFuncionario'
-import ListarProduto from './pages/ListarProduto/ListarProduto'
+import Homefuncionario from './Pages/Homefuncionario/Homefuncionario'
+import ListarProdutos from './Pages/ListarProduto/ListarProdutos'
  
  
 function App() {
@@ -8,8 +8,8 @@ function App() {
     <>
      
       <div>    
-      <HomeFuncionario/>
-      <ListarProduto/>
+      <Homefuncionario/>
+      <ListarProdutos/>
       </div>
    
     </>
