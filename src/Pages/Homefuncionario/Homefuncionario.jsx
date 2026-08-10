@@ -1,4 +1,4 @@
-import Menufuncionario from "../MenuFuncionario/MenuFuncionario"
+import Menufuncionario from "../Menufuncionario/Menufuncionario"
  
 const Homefuncionario = () => {
  

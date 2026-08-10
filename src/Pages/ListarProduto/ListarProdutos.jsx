@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react"
-import Menufuncionario from "../MenuFuncionario/MenuFuncionario"
+import Menufuncionario from "../Menufuncionario/Menufuncionario"
 import api from "../../services/api"
  
 const ListarProdutos = () => {
@@ -54,7 +54,7 @@ const ListarProdutos = () => {
     return (
         <div className="container">
  
-            <MenuFuncionario />
+            <Menufuncionario />
  
             <div className="table-responsive">
                 <table className="table table-bordered table-striped table-hover">
