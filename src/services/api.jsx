@@ -1,10 +1,9 @@
 import axios from "axios";
 
-
 const api = axios.create({
  
-    baseURL: "https://172.19.9.49/pizzariateste/api/v1",
-    timeout: 100000, //tempo maximo de resposta (10 segundos)
+    baseURL: "https://172.19.0.49/pizzariateste/api/v1",
+    timeout: 10000, //tempo maximo de resposta (10 segundos)
 })
 
 export default api

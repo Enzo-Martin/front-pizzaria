@@ -77,7 +77,7 @@ const ListarProdutos = () => {
                                         new Intl.NumberFormat("pt-BR", {
                                             style: "currency",
                                             currency: "BRL",
-                                        }).format(produto.preco)
+                                        }).format(produto.precoVenda)
                                     }
                                 </td>
                                 <td style={{ fontSize: "13px" }}> {produto.descricao} </td>
