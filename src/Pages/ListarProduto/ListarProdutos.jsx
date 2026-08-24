@@ -110,7 +110,7 @@ const ListarProdutos = () => {
 
             <div className="text-end mt-3">
                 <Link
-                to="/produtos/novos"
+                to="/produtos/novo"
                 className={`btn btn-sucess`}
                 >
                   <i className="fas fa-plus"></i>

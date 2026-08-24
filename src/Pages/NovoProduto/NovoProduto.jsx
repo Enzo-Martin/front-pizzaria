@@ -1,12 +1,35 @@
- import React, {useState, useEffect} from "react"
+
+
+import React, {useState, useEffect} from "react"
+
+import Menufuncionario from "../Menufuncionario/Menufuncionario"
+import api from "../../services/api"
 
 const NovoProduto = () => {
+
+        const [categorias, setCategorias] = useState([])
+
+        const [categoriaId, setCategoriaId] = useState("")
+
+        useEffect( ( ) =>{
+            api
+            .get("/categorias")
+            .then((response)=> {
+                setCategorias(response.data.data)
+            })
+            .catch((error)=>{
+                console.error(`Erro ao buscar a lista de categorias. ${error}`)
+            })
+         },[ ])
+
+         const escolherCategoria = (e) =>{
+            setCategoriaId(e.target.value)
+         }
  
     return (
- 
         <div className="container">
                
-   
+            <Menufuncionario/>
  
             <form className="container-fluid p-4">
                 <div className="mb-3">
@@ -40,12 +63,21 @@ const NovoProduto = () => {
                 <div className="mb-3">
                     <label className="block mb-1 font-semibold">Categoria:</label>
                      <select
-                 
+                    value={categoriaId}
+                    onChange={escolherCategoria}
                      className="border p-2 w-full rounded"
                      required
                      >
                          <option value="">Selecione uma categoria</option>
-                     
+                         {
+                            categorias
+                            .filter((cat)=> cat.codStatus === true)
+                            .map((cat)=>(
+                                <option key={cat.id} value={cat.id}>
+                                    {cat.nome}
+                                </option>
+                            ))
+                         }
                      </select>
  
                 </div>
@@ -53,9 +85,7 @@ const NovoProduto = () => {
                 <button type="submit" className="btn btn-primary w-100">
                     Adicionar Produto
                 </button>
- 
             </form >
- 
         </div >
     )
 }
