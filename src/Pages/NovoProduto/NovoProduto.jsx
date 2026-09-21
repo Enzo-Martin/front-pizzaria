@@ -3,6 +3,8 @@
 import React, {useState, useEffect} from "react"
 
 import Menufuncionario from "../Menufuncionario/Menufuncionario"
+import CredentialUser from "../components/CredentialUser"
+
 import api from "../../services/api"
 
 const NovoProduto = () => {
@@ -58,6 +60,7 @@ const NovoProduto = () => {
         <div className="container">
                
             <Menufuncionario/>
+            <CredentialUser title="Cadastro de Produto"/>
  
             <form onSubmit={enviarProduto} className="container-fluid p-4">
                 <div className="mb-3">

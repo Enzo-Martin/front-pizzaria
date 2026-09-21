@@ -1,3 +1,4 @@
+import CredentialUser from "../components/CredentialUser"
 import Menufuncionario from "../Menufuncionario/Menufuncionario"
  
 const Homefuncionario = () => {
@@ -6,6 +7,9 @@ const Homefuncionario = () => {
         <div className="container">
            
             <Menufuncionario/>
+            <CredentialUser title="Home Page Funcionário"/>
+
+            <p>Home Funcionário</p>
  
         </div>
     )
