@@ -18,6 +18,9 @@ const ListarProdutos = () => {
     // No momento em que a página for carregada
  
     const [produtos, setProdutos] = useState([])
+
+    const [isModalOpen, setIsModalOpen] = useState(false)
+    const [idProdutoAExcluir, setIdProcutoAExcluir] = useState(null)
  
     // useEffect: é um hook do react que serve para executar códigos que fica fora do controle direto da renderização
     // visual, os chamados "efeitos colaterais"
