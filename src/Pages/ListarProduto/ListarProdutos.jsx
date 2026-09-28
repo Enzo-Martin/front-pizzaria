@@ -4,6 +4,9 @@ import { Link } from "react-router-dom"
 
 import Menufuncionario from "../Menufuncionario/Menufuncionario"
 import CredentialUser from "../components/CredentialUser"
+
+import  Modal from "../components/Modal"
+
 import api from "../../services/api"
  
 const ListarProdutos = () => {
@@ -40,6 +43,28 @@ const ListarProdutos = () => {
                 console.log("Erro ao buscar a lista de produtos. ", error)
             })
     }, [] )   
+
+    const openModal = (id) =>{
+        setIdProcutoAExcluir(id)
+        setIsModalOpen(true)
+    }
+
+    const deleteProduto = async () => {
+        try {
+            const response = await api.delet(`/produtos/${idProdutoAExcluir}`)
+            alert(response.data.message)
+
+        setProdutos((produtosAtuais) =>
+            produtosAtuais.filter(
+                (produto) => produto.id !== idProdutoAExcluir
+            )
+        )
+    } catch (error) {
+        alert(`Não foi possível a exclusão do produto com o id ${idProdutoAExcluir}`)
+    }
+    setIsModalOpen(false)
+
+    }
     
     /*
     const arrayProdutos = [
@@ -74,8 +99,6 @@ const ListarProdutos = () => {
                         </tr>
                     </thead>
                     <tbody>
- 
- 
                         {produtos.map((produto) => (
                             <tr key={produto.id}>
                                 <td style={{ fontSize: "13px" }}> {produto.nome}</td>
@@ -98,7 +121,10 @@ const ListarProdutos = () => {
  
                                     {/* Botão de Excluir */}
                                     <button
-                                        className="btn btn-sm btn-danger">
+                                        className="btn btn-sm btn-danger"
+                                        onClick={() => openModal(produto.id)}
+
+                                        >
                                         <i className="fas fa-trash-alt"></i>{" "}
                                         {/* Ícone de excluir */}
                                     </button>
@@ -122,6 +148,11 @@ const ListarProdutos = () => {
                 </Link>
             </div>
 
+            <Modal
+            isOpen={isModalOpen}
+            onClose={()=> setIsModalOpen(false)}
+            onConfirm={deleteProduto}
+            />
         </div>
     )
 }
