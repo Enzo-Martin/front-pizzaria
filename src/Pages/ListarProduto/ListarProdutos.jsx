@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react"
 
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 import Menufuncionario from "../Menufuncionario/Menufuncionario"
 import CredentialUser from "../components/CredentialUser"
@@ -24,6 +24,8 @@ const ListarProdutos = () => {
 
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [idProdutoAExcluir, setIdProcutoAExcluir] = useState(null)
+
+    const navigate = useNavigate();
  
     // useEffect: é um hook do react que serve para executar códigos que fica fora do controle direto da renderização
     // visual, os chamados "efeitos colaterais"
@@ -51,7 +53,7 @@ const ListarProdutos = () => {
 
     const deleteProduto = async () => {
         try {
-            const response = await api.delet(`/produtos/${idProdutoAExcluir}`)
+            const response = await api.delete(`/produtos/${idProdutoAExcluir}`)
             alert(response.data.message)
 
         setProdutos((produtosAtuais) =>
@@ -114,7 +116,11 @@ const ListarProdutos = () => {
                                 <td className="text-center fs-6" style={{ width: "100px" }}>
                                     {/* Botão de Editar */}
                                     <button
-                                        className="btn btn-sm btn-primary me-2">
+                                        className="btn btn-sm btn-primary me-2"
+                                        onClick={() =>
+                                        navigate(`produtos/editar/${produto.id}`)
+                                        }
+                                        >
                                         <i className="fas fa-pencil-alt"></i>{" "}
                                         {/* Ícone de editar */}
                                     </button>
