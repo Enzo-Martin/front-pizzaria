@@ -50,7 +50,7 @@ const NovoProduto = () => {
                 // Limpando os campos
                 setNome("")
                 setPrecoVenda("")
-                serDescricao("")
+                setDescricao("")
             } catch (error) {
                 console.error(`Não foi possível salvar o produto ${error}`)
             }
@@ -90,7 +90,7 @@ const NovoProduto = () => {
                     <textarea
                       className="form-control"
                       value={descricao}
-                      onChange={(e)=> setDesricao(e.target.value)}
+                      onChange={(e)=> setDescricao(e.target.value)}
                       rows="3"
                       required
                     ></textarea>
